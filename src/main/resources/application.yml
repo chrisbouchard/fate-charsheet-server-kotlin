@@ -13,3 +13,6 @@ spring:
       write-dates-as-timestamps: false
   main:
     banner-mode: "log"
+
+management:
+  context-path: /manage
