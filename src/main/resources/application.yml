@@ -1,0 +1,15 @@
+spring:
+  data:
+    jpa:
+      show-sql: true
+    rest:
+      base-path: /api
+  jackson:
+    date-format: com.fasterxml.jackson.databind.util.ISO8601DateFormat
+    default-property-inclusion: NON_ABSENT
+    mapper:
+      sort-properties-alphabetically: true
+    serialization:
+      write-dates-as-timestamps: false
+  main:
+    banner-mode: "log"
