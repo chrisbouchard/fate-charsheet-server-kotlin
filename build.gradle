@@ -38,6 +38,10 @@ repositories {
     maven { url 'http://repo.spring.io/milestone' }
 }
 
+springBoot {
+    buildInfo()
+}
+
 dependencies {
     compile "com.google.guava:guava:$guavaVersion"
 
