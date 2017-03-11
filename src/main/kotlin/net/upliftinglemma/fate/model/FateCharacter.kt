@@ -1,5 +1,6 @@
 package net.upliftinglemma.fate.model
 
+import net.upliftinglemma.fate.json.MapArrayProperty
 import java.util.*
 import javax.persistence.*
 import javax.validation.constraints.NotNull
@@ -16,5 +17,10 @@ data class FateCharacter(
 
         @ElementCollection
         @OrderColumn
-        val aspects: List<Aspect>
+        val aspects: List<Aspect>,
+
+        @ElementCollection
+        @MapKeyColumn
+        @MapArrayProperty
+        val skills: Map<String, Int>
 )

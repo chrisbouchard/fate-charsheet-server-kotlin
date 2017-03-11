@@ -2,8 +2,6 @@ spring:
   data:
     jpa:
       show-sql: true
-    rest:
-      base-path: /api
   jackson:
     date-format: com.fasterxml.jackson.databind.util.ISO8601DateFormat
     default-property-inclusion: NON_ABSENT
@@ -12,7 +10,9 @@ spring:
     serialization:
       write-dates-as-timestamps: false
   main:
-    banner-mode: "log"
+    banner-mode: log
 
 management:
+  address: 127.0.0.1
   context-path: /manage
+  port: 8081
