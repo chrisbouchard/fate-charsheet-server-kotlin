@@ -9,9 +9,9 @@ import org.springframework.context.annotation.Configuration
 class JacksonConfiguration {
 
     @Bean
-    fun guavaModule(): GuavaModule = GuavaModule()
+    fun guavaModule() = GuavaModule()
 
     @Bean
-    fun hibernateModule(): Hibernate5Module = Hibernate5Module()
+    fun hibernateModule() = Hibernate5Module()
 
 }
