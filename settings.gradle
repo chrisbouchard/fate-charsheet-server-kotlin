@@ -1,2 +1,3 @@
+rootProject.buildFileName = 'build.gradle.kts'
 rootProject.name = 'fate-charsheet-server-kotlin'
 
