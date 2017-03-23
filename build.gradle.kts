@@ -45,7 +45,7 @@ configure<SpringBootPluginExtension> {
 }
 
 dependencies {
-    var guavaVersion: String by extra
+    val guavaVersion: String by extra
 
     compile(kotlinModule("stdlib-jre8"))
     compile(kotlinModule("reflect"))
