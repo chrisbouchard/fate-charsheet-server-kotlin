@@ -1,17 +1,10 @@
-import org.springframework.boot.gradle.SpringBootPluginExtension
+import org.springframework.boot.gradle.dsl.SpringBootExtension
 
 buildscript {
-    var guavaVersion: String by extra
-    guavaVersion = "21.0"
-
-    var springBootVersion: String by extra
-    springBootVersion = "2.0.0.BUILD-SNAPSHOT"
-
     repositories {
         gradleScriptKotlin()
         mavenCentral()
-        maven { setUrl("http://repo.spring.io/snapshot") }
-        maven { setUrl("http://repo.spring.io/milestone") }
+        maven { setUrl("https://repo.spring.io/libs-milestone") }
     }
 
     dependencies {
@@ -19,7 +12,7 @@ buildscript {
         classpath(kotlinModule("gradle-plugin"))
         classpath(kotlinModule("noarg"))
 
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.0.0.M1")
     }
 }
 
@@ -30,27 +23,25 @@ apply {
     plugin("kotlin-spring")
     plugin("kotlin-jpa")
 
+    plugin("io.spring.dependency-management")
     plugin("org.springframework.boot")
 }
 
 repositories {
     gradleScriptKotlin()
     mavenCentral()
-    maven { setUrl("http://repo.spring.io/snapshot") }
-    maven { setUrl("http://repo.spring.io/milestone") }
+    maven { setUrl("https://repo.spring.io/libs-milestone") }
 }
 
-configure<SpringBootPluginExtension> {
+configure<SpringBootExtension> {
     buildInfo()
 }
 
 dependencies {
-    val guavaVersion: String by extra
-
     compile(kotlinModule("stdlib-jre8"))
     compile(kotlinModule("reflect"))
 
-    compile("com.google.guava:guava:$guavaVersion")
+    compile("com.google.guava:guava:21.0")
 
     compile("com.fasterxml.jackson.datatype:jackson-datatype-guava")
     compile("com.fasterxml.jackson.datatype:jackson-datatype-hibernate5")
