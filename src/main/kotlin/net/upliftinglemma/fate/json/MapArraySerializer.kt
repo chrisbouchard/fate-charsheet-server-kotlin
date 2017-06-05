@@ -9,7 +9,7 @@ class MapArraySerializer : StdSerializer<Map<*, *>>(Map::class.java, true) {
     override fun serialize(value: Map<*, *>, gen: JsonGenerator, provider: SerializerProvider) {
         gen.writeStartArray()
 
-        value.forEach { (key, value) ->
+        for ((key, value) in value) {
             gen.writeStartArray(2)
             provider.defaultSerializeValue(key, gen)
             provider.defaultSerializeValue(value, gen)
